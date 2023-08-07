@@ -266,9 +266,6 @@ app.get('/auth/twitter/callback',
     res.redirect(`http://social-auth-app-client.vercel.app/home?token=${access_token}&tokensecret=${access_token_secret}`);
     
 });
-app.get("http://witty-duck-snaps.cyclic.app/user",(req,res)=>{
-  res.send(req.user)
-});
 
 const upload = multer({ dest: 'uploads/' });
 
@@ -312,6 +309,10 @@ app.post('/update-profile-picture',upload.single('profilePicture'),async (req,re
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 })
+
+app.get("/user",(req,res)=>{
+  res.send(req.user)
+});
 
 app.listen(PORT,()=>{
     console.log("server connected");
