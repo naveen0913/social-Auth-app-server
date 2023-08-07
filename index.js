@@ -75,7 +75,7 @@ const sessionSecret=process.env.SESSION_SECRET
 const upload1 = multer({ dest: 'uploads/' });
 app.use(express.json());
 
-app.use(cors({origin:"https://social-auth-app-client.vercel.app/",credentials:true})); //{,}
+app.use(cors({origin:"https://social-auth-app-client.vercel.app",credentials:true})); 
 app.use(bodyParser.json())
 app.use(session({ 
   secret:sessionSecret,
@@ -266,7 +266,7 @@ app.get('/auth/twitter/callback',
     res.redirect(`https://social-auth-app-client.vercel.app/home?token=${access_token}&tokensecret=${access_token_secret}`);
     
 });
-app.get("/user",(req,res)=>{
+app.get("https://social-auth-app-server.vercel.app/user",(req,res)=>{
   res.send(req.user)
 });
 
