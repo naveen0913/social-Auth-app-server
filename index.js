@@ -58,14 +58,7 @@ const profileSchema= new mongoose.Schema({
 })
 
 const Profile=mongoose.model('Profile',profileSchema)
-/*
-Profile.collection.dropIndex('about_1', (err, result) => {
-  if (err) {
-    console.error('Error dropping index:', err);
-  } else {
-    console.log('Index removed:', result);
-  }
-}); */
+
 const storage=multer.diskStorage({
   destination:function(req,file,cb){
     //cb(null, path.join(__dirname, 'uploads'));
@@ -276,8 +269,7 @@ app.get('/auth/twitter/callback',
 app.get("/user",(req,res)=>{
   res.send(req.user)
 });
-/*
-const imgbbApiKey="21987af2bbf25a6ea913471a1512b7f6"*/
+
 const upload = multer({ dest: 'uploads/' });
 
 const oauth = OAuth({
