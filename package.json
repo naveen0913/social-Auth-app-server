@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-module --es-module-specifier-resolution=node index.js",
+    "start": "node index.js", //nodemon --experimental-module --es-module-specifier-resolution
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
