@@ -266,7 +266,7 @@ app.get('/auth/twitter/callback',
     res.redirect(`http://social-auth-app-client.vercel.app/home?token=${access_token}&tokensecret=${access_token_secret}`);
     
 });
-app.get("http://social-auth-app-server.vercel.app/user",(req,res)=>{
+app.get("/user",(req,res)=>{
   res.send(req.user)
 });
 
