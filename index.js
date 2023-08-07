@@ -312,6 +312,7 @@ app.post('/update-profile-picture',upload.single('profilePicture'),async (req,re
 
 app.get("/user",(req,res)=>{
   res.send(req.user)
+  console.log(req.user)
 });
 
 app.listen(PORT,()=>{
