@@ -89,15 +89,20 @@ app.get('/allow-cors', function(request, response) {
 });
 
 app.use(bodyParser.json())
-
+app.set("trust proxy",1);
 
 app.use(session({ 
   secret:sessionSecret,
   resave:true,
   saveUninitialized:true,
+  cookie:{
+    sameSite:"name",
+    secure:true,
+    maxAge:1000 * 60 * 60 * 24 * 7
+  }
   store:MongoStore.create({
     mongoUrl:process.env.MONGODB_URL,
-    autoRemove:'native'
+    autoRemove:'native',
   })
 }))
 
