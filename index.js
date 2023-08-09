@@ -76,7 +76,16 @@ const upload1 = multer({ dest: 'uploads/' });
 app.use(express.json());
 
 app.use(cors({origin:"https://social-auth-app-client.vercel.app",credentials:true})); 
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://social-auth-app-client.vercel.app');
+    // Add other required headers if needed
+    next();
+});
+
 app.use(bodyParser.json())
+
+
 app.use(session({ 
   secret:sessionSecret,
   resave:true,
