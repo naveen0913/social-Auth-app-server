@@ -83,6 +83,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/allow-cors', function(request, response) {
+  response.set('Access-Control-Allow-Origin', '*');
+  response.sendFile(__dirname + '/ ');
+});
+
 app.use(bodyParser.json())
 
 
