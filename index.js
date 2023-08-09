@@ -100,12 +100,13 @@ app.use(session({
     secure:true,
     maxAge:1000 * 60 * 60 * 24 * 7
   },
+}))
+/*
    store:MongoStore.create({
     mongoUrl:process.env.MONGODB_URL,
     autoRemove:'native',
    })
-}))
-
+*/
 app.post('/add', upload1.single('photo'),(req,res)=>{
  
   const {name,email,phone,address,career,work,skills}=req.body;
