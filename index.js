@@ -14,7 +14,7 @@ import bodyParser from 'body-parser';
 import OAuth from 'oauth-1.0a';
 import crypto from 'crypto'
 import axios from 'axios'
-const PORT=process.env.PORT | 5000
+const PORT=process.env.PORT || 5000
 
 dotenv.config()
 const app=express();
