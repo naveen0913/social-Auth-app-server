@@ -282,7 +282,7 @@ app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { failureRedirect: '/login'}),
   function(req, res) {
     //Successful authentication, redirect home page.
-    res.redirect(`http://social-auth-app-client.vercel.app/home?token=${access_token}&tokensecret=${access_token_secret}`);
+    res.redirect(`http://social-auth-app-client.vercel.app/home}`);
     
 });
 
