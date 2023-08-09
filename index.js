@@ -75,7 +75,7 @@ const sessionSecret=process.env.SESSION_SECRET
 const upload1 = multer({ dest: 'uploads/' });
 app.use(express.json());
 
-app.use(cors({origin:"http://social-auth-app-client.vercel.app",credentials:true})); 
+app.use(cors({origin:"https://social-auth-app-client.vercel.app",credentials:true})); 
 app.use(bodyParser.json())
 app.use(session({ 
   secret:sessionSecret,
