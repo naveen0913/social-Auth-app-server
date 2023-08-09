@@ -99,13 +99,12 @@ app.use(session({
     sameSite:"name",
     secure:true,
     maxAge:1000 * 60 * 60 * 24 * 7
-  }
-}))
-
-/*  store:MongoStore.create({
+  },
+   store:MongoStore.create({
     mongoUrl:process.env.MONGODB_URL,
     autoRemove:'native',
-  })*/
+   })
+}))
 
 app.post('/add', upload1.single('photo'),(req,res)=>{
  
