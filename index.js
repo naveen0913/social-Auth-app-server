@@ -75,7 +75,7 @@ const sessionSecret=process.env.SESSION_SECRET
 const upload1 = multer({ dest: 'uploads/' });
 app.use(express.json());
 
-app.use(cors({origin:"https://social-auth-app-client.vercel.app",credentials:true})); 
+app.use(cors({origin:"http://social-auth-app-client.vercel.app",credentials:true})); 
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'https://social-auth-app-client.vercel.app');
@@ -228,7 +228,7 @@ passport.use(new LinkedInStrategy({
 
     function(req,res){
       //successful authentication
-      res.redirect(`https://social-auth-app-client.vercel.app/home`);
+      res.redirect(`http://social-auth-app-client.vercel.app/home`);
       
   });
 
@@ -282,7 +282,7 @@ app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { failureRedirect: '/login'}),
   function(req, res) {
     //Successful authentication, redirect home page.
-    res.redirect(`https://social-auth-app-client.vercel.app/home?token=${access_token}&tokensecret=${access_token_secret}`);
+    res.redirect(`http://social-auth-app-client.vercel.app/home?token=${access_token}&tokensecret=${access_token_secret}`);
     
 });
 
